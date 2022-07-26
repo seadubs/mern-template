@@ -31,7 +31,8 @@
     "express": "^4.18.1",
     "mongoose": "^6.4.7",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.18.9",
@@ -41,6 +42,7 @@
     "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
     "nodemon": "^2.0.19",
+    "redux-devtools-extension": "^2.13.9",
     "sass": "^1.54.0",
     "sass-loader": "^13.0.2",
     "style-loader": "^3.3.1",
