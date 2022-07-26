@@ -15,7 +15,7 @@ app.use((req, res, next) => {
 });
 
 // Serve the client build
-app.use(express.static(path.resolve(__dirname, '../build')));
+app.use('/build', express.static(path.resolve(__dirname, '../build')));
 
 // Handle API calls via api router
 app.use('/api', api);

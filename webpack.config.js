@@ -7,7 +7,7 @@ module.exports = {
   entry: './client/index.js',
 
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, './build/'),
     filename: 'bundle.js',
     publicPath: '/build',
   },
@@ -17,16 +17,22 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Development',
-      template: path.resolve(__dirname, 'client/public/index.html'),
+      template: path.resolve(__dirname, './public/index.html'),
       inject: false,
     }),
   ],
   devServer: {
     static: {
-      directory: path.resolve(__dirname, 'client/public/'),
+      directory: path.resolve(__dirname, './public/'),
     },
     compress: true,
     port: 8080,
+    proxy: {
+      '/api/**': {
+        target: 'http://localhost:3000/',
+        secure: false,
+      },
+    },
   },
 
   module: {
@@ -52,4 +58,5 @@ module.exports = {
       },
     ],
   },
+  
 };
